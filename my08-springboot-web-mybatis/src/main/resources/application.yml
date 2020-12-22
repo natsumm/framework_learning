@@ -1,0 +1,24 @@
+#配置tomcat端口号, 和上下文的根路径;
+#修改springboot默认的字符解析过滤器使用的字符集和强制解析
+server:
+  port: 9090
+  servlet:
+    context-path: /boot_mybatis
+    encoding:
+      charset: utf-8
+      force: true
+
+
+#配置数据库的连接信息
+#注意这里并不是之前的驱动类
+#这里不是xml文件, 所以&不需要转义
+#使用com.mysql.cj.jdbc.Driver驱动连接数据库, 需要指定时区, url中加上&serverTimezone=Asia/Shanghai
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123
+#错误配置, 数据库的 用户名和密码时是: spring.datasource.username ,spring.datasource.password
+#data-username: root
+#data-password: 123

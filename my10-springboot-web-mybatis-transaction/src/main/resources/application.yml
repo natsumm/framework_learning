@@ -1,0 +1,18 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /tx
+
+# %2B表示"+", serverTimezone=GMT%2B8表示设置时区东八区
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springboot?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: root
+    password: 123
+
+#mybatis配置, 指定mybatis的mapper文件位置, 和使用日志;
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

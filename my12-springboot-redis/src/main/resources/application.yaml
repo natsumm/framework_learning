@@ -1,0 +1,16 @@
+#指定服务器端口号, 上下文路径, CharacterEncodingFilter的字符集和强制请求, 应答对象解析
+server:
+  port: 9090
+  servlet:
+    context-path: /redis
+    encoding:
+      charset: UTF-8
+      force: true
+
+#指定redis的信息
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+#有密码时还需要配置: password: 123
+
