@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script th:src="@{js/jquery-1.11.1-min.js}" type="text/javascript"></script>
+    <script type="text/javascript">
+        function fun1() {
+            alert("button click! ");
+        }
+    </script>
+</head>
+<body>
+<h3>html属性展示</h3>
+<p>html标签中的属性thymeleaf模板引擎支持大多数</p>
+
+<form th:action="@{thym/form}">
+    <input th:id="username" th:type="text" th:value="漳卅"><br/>
+    <input th:name="btn1" th:onclick="fun1()" th:type="button" th:value="提交按钮">
+
+    <textarea th:id="textarea" th:text="${data}"></textarea>
+</form>
+</body>
+</html>

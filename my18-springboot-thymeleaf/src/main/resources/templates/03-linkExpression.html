@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>连接表达式</title>
+</head>
+<body>
+
+<h3>连接表达式@{key}</h3>
+<!--以协议开头为绝对路径-->
+<a th:href="@{http://www.baidu.com}">百度</a>
+<br/>
+<a th:href="@{${myWebsite1}}">我的网址1</a>
+<br/>
+<a th:href="@{${myWebsite2}}">我的网址2</a>
+<br/>
+<a th:href="@{${myWebsite3}}">我的网址3</a>
+<br/>
+<a th:href="@{http://www.qq.com}">腾讯</a>
+</body>
+</html>

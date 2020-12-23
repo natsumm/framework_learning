@@ -1,0 +1,14 @@
+#使用yaml文件来配置内嵌的tomcat端口号和上下文路径
+
+server:
+  port: 8088
+  servlet:
+    context-path: /myapp
+
+#视图解析器
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+

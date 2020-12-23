@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>each循环map</title>
+</head>
+<body>
+<h3>each循环map</h3>
+<!--如果map的value是对象, 会调用对象的toString()方法-->
+<div th:each="u,uStat:${userMap}">
+    <p th:text="${u.key}"></p>
+    <p th:text="${u.value.name+','+u.value.age+','+u.value.sex}"></p>
+    ------------------
+</div>
+<h3>each循环List&lt;Map&lt;String,SysUser&gt;&gt;</h3>
+-------------------------------------------------------
+<div th:each="ml:${mapList}">
+    <div th:each="m:${ml}">
+        <div th:text="${m.key}"></div>
+        <div th:text="|姓名: ${m.value.name}, 年龄: ${m.value.age}, 性别: ${m.value.sex=='m'?'男':'女'}|"></div>
+    </div>
+    ========================
+</div>
+</body>
+</html>

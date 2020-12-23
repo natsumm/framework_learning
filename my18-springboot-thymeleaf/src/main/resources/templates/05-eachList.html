@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>演示each循环list</h3>
+<!--th:each属性放在哪个标签上, 就会循环哪个标签-->
+<div th:each="var,varStat:${strList}">
+    <p th:text="${var}"></p>
+</div>
+<br/>
+<div>
+    <p th:each="str:${strList}" th:text="${str}"></p>
+</div>
+<br/>
+<br/>
+<h1>循环对象数组</h1>
+<div th:each="user:${userList}">
+    <p th:text="${user.name}"></p>
+    <p th:text="${user.age}"></p>
+    <p th:text="${user.sex}">f</p>
+</div>
+<br/>
+<h1>表格展示</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <td>编号</td>
+        <td>第几个</td>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>性别</td>
+    </tr>
+    </thead>
+    <tbody>
+    <!--拼接字符串的第一种方式: 使用''和+拼接-->
+    <tr th:each="user:${userList}">
+        <td th:text="${userStat.count}">编号</td>
+        <td th:text="${userStat.count+'/'+userStat.size}"></td>
+        <td th:text="${user.name}">姓名</td>
+        <td th:text="${user.age}">年龄</td>
+        <td th:text="${user.sex}">性别</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

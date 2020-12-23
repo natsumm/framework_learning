@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>使用each循环数组array</h3>
+
+<table th:border="1">
+    <thead>
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>性别</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="u:${userArray}">
+        <td th:text="${u.name}">姓名</td>
+        <td th:text="${u.age}">年龄</td>
+        <td th:if="${u.sex=='m'}">男</td>
+        <td th:if="${u.sex=='f'}">女</td>
+        <!--<td th:text="${u.sex=='f'?'男':'女'}">性别</td>-->
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

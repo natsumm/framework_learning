@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>inline</title>
+</head>
+<body>
+<h3>inline内联表达式</h3>
+<h3>inline的text可以不写</h3>
+<div th:inline="text">
+    <p>姓名是-->[[${name}]]</p>
+    <p>用户信息: [[|${user.name}, ${user.age}, ${user.sex}|]]</p>
+</div>
+
+<h3>三元运算符</h3>
+<div>虽然空串可以表示true, 但是作为三元运算符的布尔表达式会出错误, [不能将null转换为boolean, 转换错误]</div>
+<p th:text="${isLogin?(user.sex=='m'?'男性已登录':'女性已登录'):'未登录'}"></p>
+
+<button th:onclick="fun1()">单击按钮</button>
+<script th:inline="javascript" type="text/javascript">
+    function fun1() {
+        var name = [[${name}]];
+        //这样写可以会提示语法错误, 但是可以正常执行
+        //var msg=[[|${user.name}, ${user.age}, ${user.sex}|]];
+        var msg = [[${name}]] + "===" + [[${user.age}]] + "===" + [[${user.sex}]];
+        var sex = "";
+        if ([[${user.sex}]] == "m") {
+            sex = "男性";
+        } else {
+            sex = "女性";
+        }
+        alert("name=>" + name + ", msg==>" + msg + ", 性别=>" + sex);
+    }
+</script>
+</body>
+</html>

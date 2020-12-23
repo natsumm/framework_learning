@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ifUnless</title>
+</head>
+<body>
+
+<h3>if&nbsp;&#160;&#160;unless</h3>
+<!--if布尔表达式的运算结果为true时显示标签体中的内容, 为false时, 不显示标签-->
+<p th:if="${isLogin}">已经登录了</p>
+<p>unless的布尔表达式结果为false时, 显示标签体的内容</p>
+<p th:unless="${firewalld_status!='dead'}">防火墙已关闭</p>
+<br/>
+<p th:if="${age>10}">大于10岁</p>
+<br/>
+<p th:if="${(5+18)>15}">结果大于15</p>
+<br/>
+<p th:if="${name}">空串为真?</p>
+</body>
+</html>

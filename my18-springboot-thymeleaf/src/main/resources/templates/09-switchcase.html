@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>switchCase</title>
+</head>
+<body>
+<h3>switchCase分支选择语句</h3>
+<div th:switch="${name}">
+    <p th:case="李四">lisi</p>
+    <p th:case="张三">zhangsan</p>
+    <p th:case="*">未知</p>
+</div>
+<h3>===========================</h3>
+<div th:switch="${sex}">
+    <p th:case="m">男</p>
+    <p th:case="f">nv</p>
+    <p th:case="*">未知</p>
+</div>
+</body>
+</html>

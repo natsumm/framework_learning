@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>选择表达式</title>
+</head>
+<body>
+<h3>选择表达式*{key}</h3>
+<div th:object="${sysUser}">
+    <p th:text="*{name}">name</p>
+    <p th:text="*{age}">age</p>
+    <p th:text="*{sex}">sex</p>
+</div>
+
+<h1>选择选择表达式*{key}</h1>
+<div th:object="${date}">
+    <p th:text="*{time}">time</p>
+    <p th:text="*{year}">year</p>
+    <p th:text="*{month}">month</p>
+    <p th:text="*{day}"></p>
+</div>
+</body>
+</html>
